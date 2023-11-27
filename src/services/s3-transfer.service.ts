@@ -36,7 +36,7 @@ export class S3TransferService {
         Expires:
           operation === S3_OPERATION.getObject ? 24 * 60 * 60 : 1 * 60 * 60,
         ResponseContentType:
-          operation === S3_OPERATION.getObject ? lookup(args.key) : undefined,
+          operation === S3_OPERATION.getObject ? lookup(args.key) || undefined : undefined,
         ResponseContentDisposition:
           operation === S3_OPERATION.getObject ? 'inline;' : undefined,
       }),
