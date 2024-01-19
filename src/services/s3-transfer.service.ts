@@ -15,6 +15,8 @@ export class S3TransferService {
   ) {
     this.s3Client = new S3({
       region: this.moduleOptions.region,
+      endpoint: this.moduleOptions.endpoint,
+      s3ForcePathStyle: false,
       signatureVersion: 'v4',
       credentials: {
         accessKeyId: this.moduleOptions.accessKeyId,
@@ -36,7 +38,9 @@ export class S3TransferService {
         Expires:
           operation === S3_OPERATION.getObject ? 24 * 60 * 60 : 1 * 60 * 60,
         ResponseContentType:
-          operation === S3_OPERATION.getObject ? lookup(args.key) || undefined : undefined,
+          operation === S3_OPERATION.getObject
+            ? lookup(args.key) || undefined
+            : undefined,
         ResponseContentDisposition:
           operation === S3_OPERATION.getObject ? 'inline;' : undefined,
       }),
