@@ -19,7 +19,7 @@
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./test/jest-e2e.json"
   },
-  "dependencies": {
+  "peerDependencies": {
     "@nestjs/common": "^10.3.5",
     "@nestjs/config": "^3.2.1",
     "@nestjs/core": "^10.3.5",
@@ -31,6 +31,15 @@
     "uuid": "^9.0.1"
   },
   "devDependencies": {
+    "@nestjs/common": "^10.3.5",
+    "@nestjs/config": "^3.2.1",
+    "@nestjs/core": "^10.3.5",
+    "@nestjs/graphql": "^12.1.1",
+    "@nestjs/platform-express": "^10.3.5",
+    "aws-sdk": "^2.1585.0",
+    "reflect-metadata": "^0.2.1",
+    "rxjs": "^7.8.1",
+    "uuid": "^9.0.1",
     "@nestjs/cli": "^10.3.2",
     "@nestjs/schematics": "^10.1.1",
     "@nestjs/testing": "^10.3.5",
